@@ -1,5 +1,7 @@
 # Parallax scrolling 기법
 
+Parallax 는 배경과 콘텐츠의 움직임에 차이를 둬 평면에 공간적 깊이를 더해주는 시각적 효과다.
+
 ## CSS로 구현 perspective 이용
 
 - css로는 간단한 딱 parallax scolling만하는 기능 구현 시 사용하면 좋다고 함.
