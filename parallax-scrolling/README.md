@@ -34,3 +34,9 @@ window.addEventListener("scroll", () => {
 });
 
 ```
+
+## etc
+
+- scroll-behavior : 브라우저가 유저의 페이지 스크롤을 어떻게 동작시킬지 명시
+  - smooth : 부드러운 스크롤. default값
+  - auto (or instant) : 부드러운 효과 없이 즉시 스크롤

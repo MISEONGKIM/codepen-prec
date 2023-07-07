@@ -137,6 +137,7 @@ header {
 }
 body {
   height: 200vh;
+  background-color: #00110c;
 }
 .button-in-header {
   padding: 10px;
