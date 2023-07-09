@@ -153,21 +153,17 @@ header h1 {
   font-weight: 600;
 }
 
-header ul {
+header .menu {
   display: flex;
   gap: 2rem;
 }
 
-header ul li a {
+header .menu .menu-item a {
   font-weight: 600;
   color: var(--text-color);
   text-decoration: none;
 }
 
-/* header ul li a:hover ~ a:not(:hover) {
-  color: red;
+header .menu:hover .menu-item:not(:hover) a {
+  color: #7e8082;
 }
-
-header ul li a:hover {
-  color: blue;
-} */
