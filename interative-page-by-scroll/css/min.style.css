@@ -1,0 +1,44 @@
+/* header */
+header {
+  justify-content: flex-end;
+}
+
+header .menu-starter {
+  display: block;
+  background-image: url(../img/menu.png);
+  background-repeat: no-repeat;
+  background-size: 1.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  z-index: 2;
+}
+
+header h1 {
+  z-index: 2;
+  margin: 0.5rem;
+}
+
+header .menu {
+  visibility: hidden;
+  opacity: 0;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: 1.5rem;
+  padding-top: 6rem;
+}
+
+header .menu .menu-item {
+  margin-bottom: 1rem;
+}
+header .menu .menu-item a {
+  color: #000;
+  font-size: 0.9rem;
+}
+header .menu:hover .menu-item:not(:hover) a {
+  color: #000;
+}
