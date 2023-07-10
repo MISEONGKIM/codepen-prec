@@ -28,3 +28,19 @@ window.addEventListener("resize", () => {
   menu.style.visibility = "visible";
   menu.style.opacity = "1";
 });
+
+window.addEventListener("scroll", () => {
+  const startY = document.querySelector(".scrolling-text-list").offsetTop;
+  const endY =
+    startY + document.querySelector(".scrolling-text-list").offsetHeight;
+  const currentScroll = window.scrollY + window.innerHeight;
+
+  if (currentScroll <= startY || currentScroll >= endY) {
+    return;
+  }
+
+  const listItems = document.querySelectorAll(".scrolling-text-list ul li");
+  const listItemGap = (endY - startY) / listItems.length;
+  const index = Math.floor((currentScroll - startY) / listItemGap);
+  listItems[index].classList.("active");
+});

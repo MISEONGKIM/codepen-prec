@@ -133,11 +133,16 @@ table {
   --text-color: #fff;
   --text-color-gray: #7e8082;
 }
-
 body {
   background-color: var(--background-color);
   color: var(--text-color);
   overflow-x: hidden;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* header */
@@ -178,12 +183,6 @@ header .menu:hover .menu-item:not(:hover) a {
   color: var(--text-color-gray);
 }
 
-/*main*/
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 /*main/hero*/
 main .hero {
   text-align: center;
@@ -194,9 +193,6 @@ main .hero p {
 }
 
 main .hero figure {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-bottom: 7rem;
 }
 
@@ -236,4 +232,20 @@ main .hero .down-arrow {
   100% {
     transform: translateY(0);
   }
+}
+
+/* main/scrolling-text-list */
+main .scrolling-text-list {
+  width: 30rem;
+}
+
+main .scrolling-text-list ul li {
+  display: inline;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--background-color);
+}
+
+main .scrolling-text-list ul li#active {
+  color: var(--text-color);
 }
