@@ -129,13 +129,15 @@ table {
 }
 
 :root {
+  --background-color: #000;
   --text-color: #fff;
+  --text-color-gray: #7e8082;
 }
 
 body {
-  background-color: #000;
+  background-color: var(--background-color);
   color: var(--text-color);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* header */
@@ -173,5 +175,65 @@ header .menu .menu-item a {
 }
 
 header .menu:hover .menu-item:not(:hover) a {
-  color: #7e8082;
+  color: var(--text-color-gray);
+}
+
+/*main*/
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/*main/hero*/
+main .hero {
+  text-align: center;
+}
+
+main .hero p {
+  opacity: 0.6;
+}
+
+main .hero figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 7rem;
+}
+
+main .hero figure img {
+  width: 30rem;
+  padding-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+main .hero figcaption {
+  width: 300px;
+}
+
+main .hero figcaption p {
+  font-size: 2.3rem;
+  font-weight: 600;
+  opacity: 1;
+}
+
+main .hero figcaption p:first-child {
+  margin-bottom: 1rem;
+}
+
+main .hero .down-arrow {
+  margin-top: 1rem;
+  width: 2rem;
+  animation: unAndDown 1s infinite;
+}
+
+@keyframes unAndDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.8rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

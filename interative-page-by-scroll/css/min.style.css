@@ -21,7 +21,7 @@ header h1 {
 header .menu {
   visibility: hidden;
   opacity: 0;
-  background-color: #fff;
+  background-color: var(--text-color);
   position: absolute;
   top: 0;
   left: 0;
@@ -36,9 +36,9 @@ header .menu .menu-item {
   margin-bottom: 1rem;
 }
 header .menu .menu-item a {
-  color: #000;
+  color: var(--background-color);
   font-size: 0.9rem;
 }
 header .menu:hover .menu-item:not(:hover) a {
-  color: #000;
+  color: var(--background-color);
 }
