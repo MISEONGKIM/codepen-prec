@@ -234,18 +234,19 @@ main .hero .down-arrow {
   }
 }
 
-/* main/scrolling-text-list */
-main .scrolling-text-list {
+/* main/scrolling*/
+main .scrolling .text-list {
   width: 30rem;
 }
 
-main .scrolling-text-list ul li {
+main .scrolling .text-list li {
   display: inline;
   font-size: 3rem;
   font-weight: 600;
   color: var(--background-color);
 }
-main .scrolling-text-list ul li::before {
+
+main .scrolling .text-list li::before {
   content: "";
   display: inline-block;
   width: 3.2rem;
@@ -255,9 +256,16 @@ main .scrolling-text-list ul li::before {
   background-size: 3.2rem 3.4rem;
 }
 
-main .scrolling-text-list ul li#active {
+main .scrolling .text-list li#active {
   color: var(--text-color);
 }
-main .scrolling-text-list ul li#active::before {
+
+main .scrolling .text-list li#active::before {
   background-image: url("../img/light_house.png");
+}
+
+main .scrolling .santa {
+  width: 14rem;
+  position: absolute;
+  right: 0;
 }
