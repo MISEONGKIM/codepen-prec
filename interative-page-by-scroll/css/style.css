@@ -245,7 +245,19 @@ main .scrolling-text-list ul li {
   font-weight: 600;
   color: var(--background-color);
 }
+main .scrolling-text-list ul li::before {
+  content: "";
+  display: inline-block;
+  width: 3.2rem;
+  height: 3.4rem;
+
+  background-image: url("../img/dark_house.png");
+  background-size: 3.2rem 3.4rem;
+}
 
 main .scrolling-text-list ul li#active {
   color: var(--text-color);
+}
+main .scrolling-text-list ul li#active::before {
+  background-image: url("../img/light_house.png");
 }
