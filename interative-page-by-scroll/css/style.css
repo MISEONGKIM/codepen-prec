@@ -235,6 +235,7 @@ main .hero .down-arrow {
 }
 
 /* main/scrolling*/
+
 main .scrolling .text-list {
   width: 30rem;
 }
@@ -265,7 +266,17 @@ main .scrolling .text-list li#active::before {
 }
 
 main .scrolling .santa {
+  display: flex;
+  justify-content: flex-end;
+}
+
+main .scrolling .santa img {
   width: 14rem;
-  position: absolute;
-  right: 0;
+  transform: translate(160px, -26px) rotate(23deg);
+}
+
+/* main/video-section */
+
+main .video-section {
+  height: 50rem;
 }
