@@ -11,11 +11,10 @@ export class ImgScroll extends InterfaceScrollEvent {
     const startY = info.startY + 100;
     const endY = info.endY + 100;
     const currentScroll = window.scrollY + window.innerHeight;
-    if (super.isArea({ startY, endY, currentScroll })) {
-      this.show({ startY, endY, currentScroll });
+    if (!super.isArea({ startY, endY, currentScroll })) {
       return;
     }
-    this.hide();
+    this.show({ startY, endY, currentScroll });
   }
 
   show({ startY, endY, currentScroll }) {
@@ -25,6 +24,4 @@ export class ImgScroll extends InterfaceScrollEvent {
     const rotate = 23 - 23 * ratio;
     this.img.style.transform = `translate(${x}px, ${y}px) rotate(${rotate}deg)`;
   }
-
-  hide() {}
 }
