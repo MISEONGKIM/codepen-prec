@@ -162,24 +162,25 @@ header h1 {
   font-weight: 600;
 }
 
-header .menu-starter {
+/*nav*/
+nav .menu-starter {
   display: none;
 }
 
-header .menu {
+nav .menu {
   visibility: visible;
   opacity: 1;
   display: flex;
   gap: 2rem;
 }
 
-header .menu .menu-item a {
+nav .menu .menu-item a {
   font-weight: 600;
   color: var(--text-color);
   text-decoration: none;
 }
 
-header .menu:hover .menu-item:not(:hover) a {
+nav .menu:hover .menu-item:not(:hover) a {
   color: var(--text-color-gray);
 }
 

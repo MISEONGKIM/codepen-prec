@@ -3,7 +3,13 @@ header {
   justify-content: flex-end;
 }
 
-header .menu-starter {
+header h1 {
+  z-index: 2;
+  margin: 0.5rem;
+}
+
+/*nav*/
+nav .menu-starter {
   display: block;
   background-image: url(../img/menu.png);
   background-repeat: no-repeat;
@@ -13,12 +19,7 @@ header .menu-starter {
   z-index: 2;
 }
 
-header h1 {
-  z-index: 2;
-  margin: 0.5rem;
-}
-
-header .menu {
+nav .menu {
   visibility: hidden;
   opacity: 0;
   background-color: var(--text-color);
@@ -32,13 +33,13 @@ header .menu {
   padding-top: 6rem;
 }
 
-header .menu .menu-item {
+nav .menu .menu-item {
   margin-bottom: 1rem;
 }
-header .menu .menu-item a {
+nav .menu .menu-item a {
   color: var(--background-color);
   font-size: 0.9rem;
 }
-header .menu:hover .menu-item:not(:hover) a {
+nav .menu:hover .menu-item:not(:hover) a {
   color: var(--background-color);
 }
