@@ -236,6 +236,9 @@ main .hero .down-arrow {
 }
 
 /* main/scrolling*/
+main .scrolling {
+  margin-bottom: 20rem;
+}
 
 main .scrolling .text-list {
   width: 30rem;
@@ -280,4 +283,10 @@ main .scrolling .santa img {
 
 main .video-section {
   height: 50rem;
+}
+
+main .video-section video {
+  display: block;
+  margin: 0 auto;
+  height: 21.5rem;
 }
