@@ -3,6 +3,7 @@ export class VideoScroll {
   constructor() {
     this.videoSection = document.querySelector(".video-section");
     this.figure = this.videoSection.querySelector("figure");
+    this.figcaption = this.videoSection.querySelector("figcaption");
 
     this.video = this.videoSection.querySelector("video");
     if (this.video.duration) {
@@ -22,10 +23,12 @@ export class VideoScroll {
     const videoStartPosition = this.videoSection.offsetTop - halfOfNonVideoArea;
 
     if (currentScroll > videoStartPosition) {
-      this.fixedPosition();
+      this.fixedVideoPosition();
       this.videoPlay();
+      this.showFigcaption();
     } else {
-      this.initialPosition();
+      this.initialVideoPosition();
+      this.hideFigcaption();
     }
 
     const videoEndPosition =
@@ -34,7 +37,7 @@ export class VideoScroll {
       (halfOfNonVideoArea + this.figure.offsetHeight);
 
     if (currentScroll > videoEndPosition) {
-      this.initialPosition();
+      this.initialVideoPosition();
       //transform initial 하면 위로 휙 올라가서 사라진 거 처럼 보임
       // 아래에 위치할 수 있도록 위치 변경
       this.figure.style.transform = `translateY(${
@@ -47,7 +50,7 @@ export class VideoScroll {
     this.videoSection.style.height = duration * this.playback + "px";
   }
 
-  fixedPosition() {
+  fixedVideoPosition() {
     if (this.figure.style.position === "fixed") return;
 
     this.figure.style.position = "fixed";
@@ -56,7 +59,7 @@ export class VideoScroll {
     this.figure.style.transform = "translate(-50%, -50%)";
   }
 
-  initialPosition() {
+  initialVideoPosition() {
     if (this.figure.style.position === "relative") return;
 
     this.figure.style.position = "relative";
@@ -68,5 +71,27 @@ export class VideoScroll {
   videoPlay() {
     this.video.currentTime =
       (window.scrollY - this.videoSection.offsetTop) / this.playback;
+  }
+
+  showFigcaption() {
+    const figcationEndPosition =
+      this.videoSection.offsetTop +
+      this.figcaption.offsetTop +
+      this.figcaption.offsetHeight;
+    const y = figcationEndPosition - window.scrollY;
+    if (y < 0) return;
+    console.log(
+      y,
+      1 - y / this.figcaption.offsetHeight,
+      y / this.figcaption.offsetHeight
+    );
+    this.figcaption.style.opacity = 1 - y / this.figcaption.offsetHeight;
+
+    this.figcaption.style.transform = `translateY(${y}px)`;
+  }
+
+  hideFigcaption() {
+    this.figcaption.style.opacity = 0;
+    this.figcaption.style.transform = "translateY(35rem)";
   }
 }

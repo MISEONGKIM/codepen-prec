@@ -291,6 +291,16 @@ main .video-section video {
   height: 21.5rem;
 }
 
+main .video-section figcaption {
+  width: 38.5rem;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: right;
+  line-height: 1.5;
+  opacity: 0;
+}
+
 /* main/text-img-section */
 
 main .text-img-section {
