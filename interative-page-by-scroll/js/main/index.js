@@ -4,10 +4,13 @@ import { VideoScroll } from "./VideoScroll.js";
 
 export class MainEvent {
   constructor() {
+    const textList = new TextListScroll();
+    const img = new ImgScroll();
+    const video = new VideoScroll();
     window.addEventListener("scroll", () => {
-      new TextListScroll().event();
-      new ImgScroll().event();
-      new VideoScroll().event();
+      textList.event();
+      img.event();
+      video.event();
     });
   }
 }

@@ -290,3 +290,9 @@ main .video-section video {
   margin: 0 auto;
   height: 21.5rem;
 }
+
+/* main/text-img-section */
+
+main .text-img-section {
+  height: 50rem;
+}
