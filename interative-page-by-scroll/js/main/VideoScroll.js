@@ -1,6 +1,10 @@
-export class VideoScroll {
+import { InterfaceCenterFixed } from "./InterfaceCenterFixed.js";
+
+export class VideoScroll extends InterfaceCenterFixed {
   playback = 500;
   constructor() {
+    super();
+
     this.videoSection = document.querySelector(".video-section");
     this.figure = this.videoSection.querySelector("figure");
     this.figcaption = this.videoSection.querySelector("figcaption");
@@ -23,11 +27,11 @@ export class VideoScroll {
     const videoStartPosition = this.videoSection.offsetTop - halfOfNonVideoArea;
 
     if (currentScroll > videoStartPosition) {
-      this.fixedVideoPosition();
+      super.fixedCenter(this.figure);
       this.videoPlay();
       this.showFigcaption();
     } else {
-      this.initialVideoPosition();
+      super.initialCenter(this.figure);
       this.hideFigcaption();
     }
 
@@ -37,7 +41,7 @@ export class VideoScroll {
       (halfOfNonVideoArea + this.figure.offsetHeight);
 
     if (currentScroll > videoEndPosition) {
-      this.initialVideoPosition();
+      super.initialCenter(this.figure);
       //transform initial 하면 위로 휙 올라가서 사라진 거 처럼 보임
       // 아래에 위치할 수 있도록 위치 변경
       this.figure.style.transform = `translateY(${
@@ -48,24 +52,6 @@ export class VideoScroll {
 
   setVideoSctionHeight(duration) {
     this.videoSection.style.height = duration * this.playback + "px";
-  }
-
-  fixedVideoPosition() {
-    if (this.figure.style.position === "fixed") return;
-
-    this.figure.style.position = "fixed";
-    this.figure.style.top = "50%";
-    this.figure.style.left = "50%";
-    this.figure.style.transform = "translate(-50%, -50%)";
-  }
-
-  initialVideoPosition() {
-    if (this.figure.style.position === "relative") return;
-
-    this.figure.style.position = "relative";
-    this.figure.style.top = "initial";
-    this.figure.style.left = "initial";
-    this.figure.style.transform = "initial";
   }
 
   videoPlay() {
@@ -80,11 +66,6 @@ export class VideoScroll {
       this.figcaption.offsetHeight;
     const y = figcationEndPosition - window.scrollY;
     if (y < 0) return;
-    console.log(
-      y,
-      1 - y / this.figcaption.offsetHeight,
-      y / this.figcaption.offsetHeight
-    );
     this.figcaption.style.opacity = 1 - y / this.figcaption.offsetHeight;
 
     this.figcaption.style.transform = `translateY(${y}px)`;

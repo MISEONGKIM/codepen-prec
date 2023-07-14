@@ -302,7 +302,16 @@ main .video-section figcaption {
 }
 
 /* main/text-img-section */
-
 main .text-img-section {
-  height: 50rem;
+  height: 380px;
+}
+/* main .text-img-section img {
+  width: 20.1rem;
+} */
+
+/* main/slider-section */
+
+main .slider-section {
+  height: 62.5rem;
+  background-color: var(--text-color);
 }
